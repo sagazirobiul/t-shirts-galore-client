@@ -11,7 +11,6 @@
 - React 
 - React Router 
 - React Bootstrap
-- React Modal 
 - Firebase Authentication
 - Firebase Hosting 
 - Express JS
