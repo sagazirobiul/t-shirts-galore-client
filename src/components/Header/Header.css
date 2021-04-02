@@ -2,6 +2,9 @@
     background: #ffffff!important;
     box-shadow: 1px 2px 8px #c7c7c7;
 }
+.navbar {
+    padding: .5rem 1rem!important;
+}
 .menu a {
     padding: 1rem 1rem 0.6rem!important;
     color: #000000;

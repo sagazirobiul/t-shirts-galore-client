@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import './AddProduct.css'
 
 const AddProduct = () => {
-    const { register, handleSubmit } = useForm();
+    const { register , handleSubmit, errors } = useForm();
     const [imgURL, setImageURL] = useState(null);
     const onSubmit = data => {
         const productsData = {
@@ -24,6 +24,10 @@ const AddProduct = () => {
                 alert('your product added successfully')
             }
         })
+        document.getElementById("description").value = "";
+        document.getElementById("color").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("file").value = "";
     };
     const handleImgUpload = event => {
         const imageData = new FormData();
@@ -40,34 +44,38 @@ const AddProduct = () => {
     return (
         <>
         <h2 className="manageHeader mt-3">Add Product</h2>
-        <div className="addProduct mt-3">
+        <div className="mt-3 formDiv">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="row allInput">
+                <div className="row allInput addProduct">
                     <div className="col-md-6">
                         <label for="description">Description</label>
                         <br/>
-                        <input name="description" id="description" placeholder="Enter description" ref={register} />
+                        <input name="description" id="description" placeholder="Enter description" ref={register({ required: true })} />
+                        {errors.description && <span className='text-warning'>Description is required!</span>}
                     </div>
                     <div className="col-md-6">
                         <label for="color">Color</label>
                         <br/>
-                        <input name="color" id="color" placeholder="Enter color name" ref={register} />
+                        <input name="color" id="color" placeholder="Enter color name" ref={register({ required: true })} />
+                        {errors.color && <span className='text-warning'>Color is required!</span>}
                     </div>
                     <div className="col-md-6 mt-3">
                         <label for="price">Price</label>
                         <br/>
-                        <input name="price" id="price" placeholder="Enter price" ref={register} />
+                        <input name="price" id="price" placeholder="Enter price" ref={register({ required: true })} />
+                        {errors.price && <span className='text-warning'>Price is required!</span>}
                     </div>
                     <div className="col-md-6 mt-3">
                         <label for="file">Add Photo</label>
                         <br/>
-                        <input type="file" id="file" placeholder="Upload Photo" name="img" onChange={handleImgUpload} />
+                        <input type="file" id="file" placeholder="Upload Photo" name="img" onChange={handleImgUpload} ref={register({ required: true })}/>
+                        {imgURL === null && <span className='text-warning'>Image is required!</span>}
                     </div>
                 </div>
+                <div className="saveButton">
+                    <button className="btn btn-info mr-4 mt-4 px-5" type="submit">Save</button>
+                </div>
             </form>
-        </div>
-        <div className="saveButton">
-            <button className="btn btn-info mr-4 mt-4 px-5" type="submit" disabled={imgURL === null}>Save</button>
         </div>
         </>
     );

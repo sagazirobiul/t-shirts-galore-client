@@ -40,3 +40,13 @@
     transform: rotate(360deg);
   }
 }
+@media (max-width: 768px) {
+  .adminRow {
+    height: 20%!important;
+  }
+}
+@media (max-width: 991px) {
+  .nav-item {
+    padding: 0.5rem 0!important;
+  }
+}

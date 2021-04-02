@@ -24,12 +24,15 @@ const LogIn = () => {
         })
     }
     return (
+        <>
         <div className="col-md-3 mx-auto logIn mt-5">
             <h2 className="formHeader">LogIn</h2>
             <button className="googleBtn" onClick={() => signIn(user, googleProvider)}>Sign in with google</button>
             <button className="facebookBtn" onClick={() => signIn(user, fbProvider)}>Sign in with facebook</button>
             <button className="githubBtn" onClick={() => signIn(user, ghProvider)}>Sign in with github</button>
         </div>
+        <p className="text-center text-danger mt-5">{user.error}</p>
+        </>
     );
 };
 

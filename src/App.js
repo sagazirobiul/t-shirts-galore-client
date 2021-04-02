@@ -45,8 +45,6 @@ function App() {
             <Route exact path="/">
               <Header/>
               <Home/>
-              <h3>{user?.email}</h3>
-              <h3>{user.error}</h3>
             </Route>
           </Switch>
       </Router>

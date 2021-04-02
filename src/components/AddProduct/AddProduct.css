@@ -1,3 +1,6 @@
+.formDiv{
+    padding: 1.5rem;
+}
 .addProduct {
     background: white;
     padding: 1.5rem;
@@ -22,4 +25,7 @@
     border-radius: 0.4rem!important;
     background-color: #48dbfb!important;
     border: 1px solid #48dbfb!important;
+}
+.saveButton button:hover {
+    background-color: #25b0cf!important;
 }
