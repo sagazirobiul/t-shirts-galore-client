@@ -15,15 +15,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import CheckOut from './components/CheckOut/CheckOut';
 
+
 export const UserContext = createContext();
 function App() {
   const [user,setUser] = useState({
     name:'',
-    email: ''
+    email: '',
+    error: ''
   })
   return (
     <UserContext.Provider value={[user, setUser]}>
-      <h3>{user.email}</h3>
       <Router>
           <Switch>
             <PrivateRoute path="/checkOut/:id">
@@ -31,6 +32,7 @@ function App() {
               <CheckOut/>
             </PrivateRoute>
             <Route path="/login">
+              <Header/>
               <LogIn/>
             </Route>
             <PrivateRoute path="/admin">
@@ -40,9 +42,11 @@ function App() {
               <Header/>
               <Orders/>
             </PrivateRoute>
-            <Route path="/">
+            <Route exact path="/">
               <Header/>
               <Home/>
+              <h3>{user?.email}</h3>
+              <h3>{user.error}</h3>
             </Route>
           </Switch>
       </Router>

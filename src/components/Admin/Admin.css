@@ -1,0 +1,37 @@
+.adminMenuBar {
+    height: 100%;
+    background: #30bddd;
+    padding: 0!important;
+}
+.adminMenu a {
+    display: block!important;
+    color: white!important;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+.adminMenu a:hover {
+    text-decoration: none;
+    background-color: #30d9ff!important;
+}
+.adminRow {
+    height: 100vh;
+}
+.adminMenuBar h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    background: white;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+.adminMenuBar h2 a{
+    color: black;
+}
+.adminMenuBar h2 a:hover {
+    text-decoration: none;
+}
+.adminHighlight{
+    color: white;
+    margin-right: 0.5rem;
+}

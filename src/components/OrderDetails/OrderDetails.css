@@ -1,0 +1,29 @@
+.orderDetailsBox {
+    background: white;
+    padding: 1rem;
+    box-shadow: 10px 10px 8px #ece9e9, -5px -5px 25px #ece9e9;
+    border-radius: 1rem;
+    margin: 0.8rem 0;
+}
+.orderedProductImg img {
+    height: 200px;
+}
+.orderedProductDetails {
+    width: 100%!important;
+}
+.orderedProductDetails p {
+    font-weight: 500;
+}
+.idHeader {
+    background-color: #48dbfb;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    color: white;
+}
+.orderHighlight {
+    color: #48dbfb;
+}

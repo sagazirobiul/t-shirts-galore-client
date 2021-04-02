@@ -1,0 +1,36 @@
+.manageHeader {
+    background: #48dbfb;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+.manageProduct{
+    background: white;
+    padding: 1.5rem;
+    box-shadow: 10px 10px 8px #ece9e9, -5px -5px 25px #ece9e9;
+    border-radius: 1rem;
+}
+.manageProductHeader {
+    background: #ececec;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.2rem;
+}
+.manageProductHeader p {
+    margin: 0;
+    font-weight: 500;
+}
+.manageProductDetail {
+    margin: 0.8rem 0;
+    padding-left: 1rem;
+}
+.manageProductDetail p{
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+}
+.manageProductDetail button {
+    margin: 0 0.2rem;
+}

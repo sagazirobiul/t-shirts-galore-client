@@ -1,0 +1,47 @@
+.productCard{
+    background: white!important;
+    padding: 1rem!important;
+    box-shadow: 10px 10px 8px #e2e2e2, -5px -5px 25px #ece9e9!important;
+    border-radius: 0.5rem!important;
+}
+.card-img{
+    width: 100%;
+    height: 50vh;
+}
+.card-img img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+.productDetails p {
+    margin: 0;
+    font-weight: 500;
+}
+.buyBtn{
+    border-radius: 0.4rem!important;
+    background-color: #48dbfb!important;
+    border: 1px solid #48dbfb!important;
+    font-weight: 500!important;
+}
+.buyBtn:hover {
+    background-color: #11c1e9!important;
+}
+.iconHighlight {
+    color: #48dbfb;
+}
+.productDescription{
+    font-size: 1rem;
+    padding-top: 0.5rem;
+}
+.productCard h6 {
+    padding: 0.5rem 0;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+.carHighlight{
+    color: black;
+    margin-right: 0.2rem;
+}

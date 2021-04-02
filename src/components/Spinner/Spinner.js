@@ -6,9 +6,9 @@ const Spinner = () => {
     return (
         <Loader
         type="Grid"
-        color="#00BFFF"
-        height={100}
-        width={100}
+        color="#48dbfb"
+        height={90}
+        width={90}
       />
     );
 };

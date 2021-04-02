@@ -1,0 +1,12 @@
+.home {
+    padding-bottom: 2rem;
+}
+.spinner {
+    text-align: center;
+    margin-top: 25vh;
+}
+.searchInput button{
+    background-color: #48dbfb!important;
+    border: 1px solid #48dbfb!important;
+    color: white!important;
+}

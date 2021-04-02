@@ -1,4 +1,29 @@
+.menuBar {
+    background: #ffffff!important;
+    box-shadow: 1px 2px 8px #c7c7c7;
+}
 .menu a {
-    padding: 1rem!important;
-
+    padding: 1rem 1rem 0.6rem!important;
+    color: #000000;
+    text-decoration: none!important;
+    font-weight: 500;
+}
+.navbar-collapse {
+    flex-grow: 0!important;
+}
+.menu a:hover {
+    color: rgba(0, 0, 0, 0.384)!important;
+}
+.menuStyle {
+    color: #48dbfb!important;
+}
+.navBrandName {
+    color: #000000!important;
+    font-weight: 700;
+}
+.navBrandName:hover{
+    text-decoration: none;
+}
+.navHighlight{
+    color: #48dbfb!important;
 }

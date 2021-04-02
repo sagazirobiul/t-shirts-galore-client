@@ -1,15 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
+import './CheckOut.css'
 
 const CheckOut = () => {
     const { id } = useParams();
     const [user, setUser] = useContext(UserContext);
     const [checkOutProduct, setCheckOutProduct] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:8000/tShirts/${id}`)
+        fetch(`https://lychee-surprise-71619.herokuapp.com/tShirts/${id}`)
         .then(res => res.json())
         .then(data => {
             setCheckOutProduct(data);
@@ -25,7 +26,7 @@ const CheckOut = () => {
             email: user.email
         }
 
-        fetch('http://localhost:8000/addOrders', {
+        fetch('https://lychee-surprise-71619.herokuapp.com/addOrders', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newOrders)
@@ -35,27 +36,30 @@ const CheckOut = () => {
 
     }
     return (
-        <div>
-            <table>
-                <tr>
-                    <th>Description</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
-                <tr>
-                    <td>{checkOutProduct.description}</td>
-                    <td>1</td>
-                    <td>{checkOutProduct.price}</td>
-                </tr>
-                <tr>
-                    <td colSpan="2">Total</td>
-                    <td>{checkOutProduct.price}</td>
-                </tr>
-            </table>
-            <div>
-                <Button as={Link} to="/orders" onClick={handleCheckOut}>Checkout</Button>
+        <Container>
+            <h2 className="checkOutHeader">CheckOut</h2>
+            <div className="checkOutForm">
+                <table>
+                    <tr className="tableHeader">
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>{checkOutProduct.description}</td>
+                        <td>1</td>
+                        <td>${checkOutProduct.price}</td>
+                    </tr>
+                    <tr className="tableFooter">
+                        <td colSpan="2">Total</td>
+                        <td>${checkOutProduct.price}</td>
+                    </tr>
+                </table>
             </div>
-        </div>
+            <div className="checkoutBtnDiv">
+                <Button className="btn btn-info mr-4 mt-4 px-5 checkoutBtn" as={Link} to="/orders" onClick={handleCheckOut}>Checkout</Button>
+            </div>
+        </Container>
     );
 };
 
