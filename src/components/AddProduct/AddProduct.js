@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import './AddProduct.css'
 
 const AddProduct = () => {
-    const { register , handleSubmit, errors } = useForm();
+    const { register , handleSubmit, errors, reset } = useForm();
     const [imgURL, setImageURL] = useState(null);
     const onSubmit = data => {
         const productsData = {
@@ -24,10 +24,7 @@ const AddProduct = () => {
                 alert('your product added successfully')
             }
         })
-        document.getElementById("description").value = "";
-        document.getElementById("color").value = "";
-        document.getElementById("price").value = "";
-        document.getElementById("file").value = "";
+        reset();
     };
     const handleImgUpload = event => {
         const imageData = new FormData();
