@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt, faEdit} from '@fortawesome/free-solid-svg-icons'
 import Spinner from '../Spinner/Spinner';
 import './ManageProduct.css'
+import swal from 'sweetalert';
 
 const ManageProduct = () => {
     const [products, setProducts] = useState([])
@@ -18,13 +19,25 @@ const ManageProduct = () => {
     }, [isDeleted])
 
     const handleDelete = (id) => {
-        fetch('https://lychee-surprise-71619.herokuapp.com/delete?id='+id, {
-            method: 'DELETE'
-        })
-        .then(res => res.json())
-        .then(data => {
-            setDeleted(data)
-        })
+        swal({
+            title: "Are you sure?",
+            text: "Are you sure?, you want to delete this product!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if(willDelete){
+                fetch('https://lychee-surprise-71619.herokuapp.com/delete?id='+id, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    swal('Success!', 'One product deleted successfully.', 'success');
+                    setDeleted(data)
+                })
+            }
+          });
     }
     return (
         <>
@@ -45,8 +58,8 @@ const ManageProduct = () => {
                                 <p className="col-3">{color}</p>
                                 <p className="col-3">{price}</p>
                                 <div className="text-center col-2">
-                                    <button className="btn btn-success"><FontAwesomeIcon icon={faEdit} /></button>
-                                    <button className="btn btn-danger" onClick={() => handleDelete(_id)}><FontAwesomeIcon icon={faTrashAlt} /></button>
+                                    <button className="btn btn-outline-success"><FontAwesomeIcon icon={faEdit} /></button>
+                                    <button className="btn btn-outline-danger" onClick={() => handleDelete(_id)}><FontAwesomeIcon icon={faTrashAlt} /></button>
                                 </div>
                             </div>
                         )

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
-import './CheckOut.css'
+import './CheckOut.css';
+import swal from 'sweetalert';
 
 const CheckOut = () => {
     const { id } = useParams();
@@ -32,7 +32,11 @@ const CheckOut = () => {
             body: JSON.stringify(newOrders)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data){
+                swal("Success!", "Your order has been placed successfully!", "success");
+            }
+        })
 
     }
     return (
@@ -57,7 +61,7 @@ const CheckOut = () => {
                 </table>
             </div>
             <div className="checkoutBtnDiv">
-                <Button className="btn btn-info mr-4 mt-4 px-5 checkoutBtn" as={Link} to="/orders" onClick={handleCheckOut}>Checkout</Button>
+                <Button className="btn btn-info mr-4 mt-4 px-5 checkoutBtn" onClick={handleCheckOut}>Checkout</Button>
             </div>
         </Container>
     );

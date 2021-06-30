@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import './AddProduct.css'
+import swal from 'sweetalert';
 
 const AddProduct = () => {
     const { register , handleSubmit, errors, reset } = useForm();
@@ -21,7 +22,7 @@ const AddProduct = () => {
         .then(res => res.json())
         .then(data => {
             if(data){
-                alert('your product added successfully')
+                swal("Success!", "One product added successfully!", "success");
             }
         })
         reset();

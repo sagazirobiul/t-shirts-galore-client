@@ -12,6 +12,7 @@
     padding: 1.5rem;
     box-shadow: 10px 10px 8px #ece9e9, -5px -5px 25px #ece9e9;
     border-radius: 1rem;
+    font-family: sans-serif;
 }
 .manageProductHeader {
     background: #ececec;

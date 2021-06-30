@@ -1,7 +1,9 @@
 .adminMenuBar {
-    height: 100%;
+    height: 100vh;
     background: #30bddd;
     padding: 0!important;
+    position: sticky!important;
+    top: 0
 }
 .adminMenu a {
     display: block!important;

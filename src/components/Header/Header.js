@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
+import { UserContext } from '../../App';
 import './Header.css'
 
 const Header = () => {
+    const [user, setUser] = useContext(UserContext)
+
     return (
         <Navbar className="menuBar" expand="lg">
             <Container>
@@ -21,7 +24,9 @@ const Header = () => {
                             <NavLink activeClassName="menuStyle" to="/admin">Admin</NavLink>
                         </Nav.Item>
                         <Nav.Item>
+                            {user.email ? <button onClick={() => setUser({})} className="btn checkoutBtn">LogOut</button> :
                             <NavLink activeClassName="menuStyle" to="/login">Log In</NavLink>
+                            }
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>

@@ -10,6 +10,7 @@
     color: #000000;
     text-decoration: none!important;
     font-weight: 500;
+    transition: 0.3s;
 }
 .navbar-collapse {
     flex-grow: 0!important;
@@ -20,6 +21,10 @@
 .menuStyle {
     color: #48dbfb!important;
 }
+.menuStyle:hover {
+    color: #48dbfb!important;
+}
+
 .navBrandName {
     color: #000000!important;
     font-weight: 700;
