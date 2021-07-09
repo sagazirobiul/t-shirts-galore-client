@@ -23,6 +23,7 @@ function App() {
     email: '',
     error: ''
   })
+  
   return (
     <UserContext.Provider value={[user, setUser]}>
       <Router>
