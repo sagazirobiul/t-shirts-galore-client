@@ -24,7 +24,7 @@ const Header = () => {
                             <NavLink activeClassName="menuStyle" to="/admin">Admin</NavLink>
                         </Nav.Item>
                         <Nav.Item>
-                            {user.email ? <button onClick={() => setUser({})} className="btn checkoutBtn">LogOut</button> :
+                            {user.email ? <button onClick={() => setUser({})} className="logOutBtn">LogOut</button> :
                             <NavLink activeClassName="menuStyle" to="/login">Log In</NavLink>
                             }
                         </Nav.Item>

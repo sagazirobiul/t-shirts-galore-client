@@ -35,3 +35,17 @@
 .navHighlight{
     color: #48dbfb!important;
 }
+
+.logOutBtn {
+    background: #48DBFB;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 0.3rem;
+    font-weight: 500;
+    transition: 0.4s;
+}
+.logOutBtn:hover {
+    background: #11C1E9;
+}
