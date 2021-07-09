@@ -16,7 +16,7 @@
     flex-grow: 0!important;
 }
 .menu a:hover {
-    color: rgba(0, 0, 0, 0.384)!important;
+    color: rgba(0, 0, 0, 0.384);
 }
 .menuStyle {
     color: #48dbfb!important;
