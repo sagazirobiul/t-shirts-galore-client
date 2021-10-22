@@ -7,6 +7,11 @@ if(!firebase.apps.length){
     firebase.initializeApp(firebaseConfig);
 }
 
+
+const setEmail = (e) => {
+    localStorage.setItem('email', e)
+}
+
 export const handleSignIn = (user, provider) => {
     return firebase.auth().signInWithPopup(provider)
     .then((result) => {
@@ -15,6 +20,7 @@ export const handleSignIn = (user, provider) => {
             name: user.displayName,
             email: user.email
         }
+        setEmail(user.email)
         return newUser
     }).catch((error) => {
         const newUserInfo = {...user};

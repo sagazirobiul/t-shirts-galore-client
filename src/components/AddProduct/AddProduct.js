@@ -49,7 +49,7 @@ const AddProduct = () => {
                         <label for="description">Description</label>
                         <br/>
                         <input name="description" id="description" placeholder="Enter description" ref={register({ required: true })} />
-                        {errors.description && <span className='text-warning'>Description is required!</span>}
+                        {errors.description && <span className='text-warning form-control'>Description is required!</span>}
                     </div>
                     <div className="col-md-6">
                         <label for="color">Color</label>

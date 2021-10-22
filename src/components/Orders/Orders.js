@@ -8,18 +8,20 @@ import './Order.css'
 const Orders = () => {
     const [user, setUser] = useContext(UserContext)
     const [orders, setOrders] = useState([])
+    const email = localStorage.getItem('email')
+
     useEffect(() => {
-        fetch('https://lychee-surprise-71619.herokuapp.com/orders?email='+user.email)
+        fetch('https://lychee-surprise-71619.herokuapp.com/orders?email='+user.email || +email)
         .then(res => res.json())
         .then(data => {
             setOrders(data);
         })
-    }, [user.email, orders])
+    }, [user.email, orders, email])
     return (
         <Container>
             <h2 className="ordersHeader">Your Orders</h2>
             <div className="d-flex justify-content-between activeUser">
-                <p>Email: {user.email}</p>
+                <p>Email: {user.email || email}</p>
                 <p>Active Orders: {orders.length}</p>
             </div>
             {!orders.length && <div className="spinner"><Spinner/></div>}

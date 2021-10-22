@@ -6,6 +6,7 @@ import './Header.css'
 
 const Header = () => {
     const [user, setUser] = useContext(UserContext)
+    const eamil = localStorage.getItem('email')
 
     return (
         <Navbar className="menuBar" expand="lg">
@@ -24,7 +25,12 @@ const Header = () => {
                             <NavLink activeClassName="menuStyle" to="/admin">Admin</NavLink>
                         </Nav.Item>
                         <Nav.Item>
-                            {user.email ? <button onClick={() => setUser({})} className="logOutBtn">LogOut</button> :
+                            {user.email || eamil ? 
+                            <button onClick={() => {
+                                setUser({})
+                                localStorage.removeItem("email");
+                                }} className="logOutBtn">LogOut</button> 
+                            :
                             <NavLink activeClassName="menuStyle" to="/login">Log In</NavLink>
                             }
                         </Nav.Item>
